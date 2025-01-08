@@ -17,10 +17,13 @@ struct DepartmentDetailView: View {
         List(departmentToShow.items) { currentItem in
             Text(currentItem.name)
         }
+        .listStyle(.plain)
         .navigationTitle(departmentToShow.name)
     }
 }
 
 #Preview {
-    DepartmentDetailView(departmentToShow:thisWeeksFlyer.departments[2])
+    NavigationStack{
+        DepartmentDetailView(departmentToShow:thisWeeksFlyer.departments[2])
+    }
 }
