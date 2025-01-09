@@ -16,6 +16,19 @@ struct DepartmentDetailView: View {
     var body: some View {
         List(departmentToShow.items) { currentItem in
             Text(currentItem.name)
+                .bold()
+                .font(Font.custom("Times New Roman",size: 27))
+            Image(currentItem.image)
+                .resizable()
+                .scaledToFit()
+            HStack{
+                Text(currentItem.price)
+                    .bold()
+                    .font(Font.custom("Times New Roman",size: 27))
+                Text("$")
+                    .bold()
+                    .font(Font.custom("Times New Roman",size: 27))
+            }
         }
         .listStyle(.plain)
         .navigationTitle(departmentToShow.name)
